@@ -5,14 +5,15 @@ Console.WriteLine("This program simply simulates rolling a die.");
 Die die1 = new Die();
 
 // Simulate rolling the die
-bool keepRolling = true;
-while (keepRolling == true) {
+while (die1.IsHeld == false) {
 	Console.Write("Your die rolled a ");
-	Console.WriteLine(die1.RollDie());
-	Console.Write("Keep rolling? (y/n) ");
+	die1.RollDie();
+	Console.WriteLine(die1.FaceValue);
+	Console.Write("Hold the die? (y/n) ");
 	string response = Console.ReadLine();
-	if(response.Equals("n"))
+	if(response.Equals("y"))
 	{
-		keepRolling = false; 
+		die1.IsHeld = true;
+		Console.WriteLine("Die is held");
 	}
 }
