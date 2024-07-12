@@ -13,6 +13,7 @@ while (die1.IsHeld == false) {
 	string response = Console.ReadLine();
 	if(response.Equals("y"))
 	{
-		die1.IsHeld = true; 
+		die1.IsHeld = true;
+		Console.WriteLine("Die is held");
 	}
 }

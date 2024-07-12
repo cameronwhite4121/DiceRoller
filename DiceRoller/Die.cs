@@ -31,13 +31,18 @@ namespace DiceRoller
 
 		/// <summary>
 		/// Rolls the die and the roll is set to face value <see cref="FaceValue"/>
+		/// if the die is not held.
 		/// </summary>
-		/// <returns></returns>
+		/// <returns><see cref="FaceValue"/></returns>
         public byte RollDie()
 		{
-			Random random = new Random();
-			FaceValue =  Convert.ToByte(random.Next(1, 7));
+			if (!IsHeld) 
+			{
+				Random random = new Random();
+				FaceValue = Convert.ToByte(random.Next(1, 7));				
+			}
 			return FaceValue;
+
 		}
 	}
 }
