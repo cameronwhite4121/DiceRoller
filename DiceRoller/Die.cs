@@ -13,9 +13,16 @@ namespace DiceRoller
 	public class Die
 	{
 		/// <summary>
+		/// Creates and rolls the die at construction
+		/// </summary>
+		public Die()
+		{
+			RollDie();
+		}
+		/// <summary>
 		/// The current value of the die that was rolled
 		/// </summary>
-        public byte FaceValue { get; set; }
+        public byte FaceValue { get; private set; }
 
 		/// <summary>
 		/// True if the die is held (the player wants to keep the value)
