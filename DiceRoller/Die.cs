@@ -12,6 +12,18 @@ namespace DiceRoller
 	/// </summary>
 	public class Die
 	{
+
+		/// <summary>
+		/// You can have static members in non-static classes.
+		/// Static members are in shared in all instances.
+		/// </summary>
+		private static Random _random;
+
+		static Die()
+		{
+			_random = new Random();
+		}
+
 		/// <summary>
 		/// Creates and rolls the die at construction
 		/// </summary>
@@ -38,8 +50,7 @@ namespace DiceRoller
 		{
 			if (!IsHeld) 
 			{
-				Random random = new Random();
-				FaceValue = Convert.ToByte(random.Next(1, 7));				
+				FaceValue = Convert.ToByte(_random.Next(1, 7));				
 			}
 			return FaceValue;
 
